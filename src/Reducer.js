@@ -6,6 +6,7 @@ export const initialState = {
 };
 
 export const reducer = (state, action) => {
+  console.log(action.payload);
   switch (action.type) {
     case "ADD_USER":
       return {
@@ -35,6 +36,12 @@ export const reducer = (state, action) => {
         state,
         ...state,
         user: "",
+      };
+    case "SORT":
+      return {
+        state,
+        ...state,
+        user: action.payload,
       };
 
     case "ADD_TO_BASKET":
